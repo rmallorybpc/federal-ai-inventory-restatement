@@ -194,13 +194,72 @@ Preliminary arithmetic, not findings:
 
 - Excluding retired rows from both years moves published growth from 69.3 percent to 65.6 percent.
 - If every flagged 2024 commercial use left individual reporting in 2025, the restated 2024 base falls. Matched categories only: growth of about 83 percent. Matched plus reworded: about 106 percent.
-- Both bounds assume flagged uses vanished from the 2025 individual file. That is unverified. The DOJ match tests it directly.
+- Both bounds assume flagged uses vanished from the 2025 individual file. The DOJ pilot shows this fails for at least one large agency. Treat both figures as upper bounds, not estimates.
 - Direction: the COTS rule change likely deflated published growth. This supports the signed decomposition.
 
-DOJ:
+## DOJ pilot results
 
-- OMB files: 240 rows in 2024 v2, 314 in 2025. DOJ's own page: 315 in 2025, a 30.7 percent increase, implying 241 in 2024. DOJ counts one more than OMB in both years. Reconcile before matching.
-- 2025 DOJ ids follow the format DOJ-0001.
+Completed 2026-11-11. First increment of the identifier stability pilot. Per agency detail, including tool names, stays in results/ and out of the public repo.
+
+Reconciliation:
+
+- DOJ's own 2024 file has 241 rows. One is a placeholder recorded as removed for administrative error. OMB dropped it. DOJ had 240 real use cases, and OMB's count is correct.
+- OMB's 2025 file has 314 DOJ rows but 312 distinct ids. Two use cases are listed twice. Published DOJ growth overstates by 2.
+
+Identifiers:
+
+- 79.2 percent of 2024 ids reappear in 2025 (190 of 240).
+- 90.0 percent of 2024 use cases continue in some form once merges and renames are counted (216 of 240).
+- 8 use cases continue under a new id. Each one breaks OMB's rule that identifiers persist.
+- 59 of 191 id-matched pairs changed name. 17 changed substantially. A recurring pattern: a named product in 2024 became a generic function label in 2025.
+
+2024 side decomposition:
+
+| Outcome | Count | Share |
+|---|---|---|
+| Continues by id | 190 | 79.2% |
+| Merged into another entry | 18 | 7.5% |
+| Renamed under a new id | 8 | 3.3% |
+| Retired, disclosed | 8 | 3.3% |
+| Gone, no counterpart | 16 | 6.7% |
+
+Restatement:
+
+| Measure | 2024 base | 2025 count | Growth |
+|---|---|---|---|
+| Published | 240 | 314 | 30.8% |
+| Duplicates removed | 240 | 312 | 30.0% |
+| 2024 ruler | 240 | 330 | 37.5% |
+| 2025 ruler | 222 | 312 | 40.5% |
+
+- Under either constant ruler, DOJ growth runs 7 to 10 points above published. Consolidation shrank the 2025 count.
+- The gap between the two rulers is arithmetic, not a finding. Both rows use the same 18 merges. A ruler disagreement counts as a finding only when the rulers adjust different components.
+
+Commercial product reporting:
+
+- DOJ is not in the 2025 COTS grid. Neither are several other agencies with individual use cases. The grid is a partial roster, which makes it a composition issue.
+- DOJ flagged 18 uses as commercial in 2024. 14 continue in the 2025 individual file. DOJ kept reporting commercial tools one by one, so the COTS rule barely affected its growth.
+- DOJ left its 2024 commercial flag blank on 223 of 241 rows. A blank does not mean non-commercial.
+
+Disappearance cell:
+
+- 16 of 240, or 6.7 percent. Too small to stand alone for one agency. Workable as an aggregate rate across agencies.
+
+Matcher calibration, for agencies without identifiers:
+
+- Text matching alone finds the true 2025 partner 86 percent of the time at best. The true partner is in the top 3 candidates 93 percent of the time.
+- Misclassification runs from about 14 percent at a low threshold to about 26 percent at a high one. No threshold does better than 14 percent.
+- At the low threshold, errors are wrong pairings. At high thresholds, errors are missed matches, which count as one disappearance plus one new entry.
+- The threshold is the ruleset knob. Low maps to strict, high maps to loose. Each ruleset now carries a measured error rate.
+- Calibrated on DOJ only. HHS may describe use cases differently.
+
+Method notes for the definition spec:
+
+- Labels: continues, merged, renamed, retired, gone, scope, cots, unsure.
+- Retired requires the agency's own retired status. An active use case that vanished is gone, even when it probably ended.
+- A 2025 entry that already carries a 2024 id makes any second 2024 match a merge, not a rename.
+- Manual review needs the full agency 2025 list. A partial list of new ids hides every merge target.
+- Label agreement was 39 of 50, but the review was guided by proposals. It is not inter-rater evidence. A blind second rater is needed for that, best done on HHS.
 
 ## Complexity
 
@@ -250,7 +309,7 @@ All live data runs locally, not in a sandbox.
 In order, cheapest first:
 
 1. Second differentiation pass against GAO and inspector general products. Complete on 2026-09-16. Gap open.
-2. Identifier stability pilot, with the field crosswalk check attached. DOJ first, then HHS.
+2. Identifier stability pilot, with the field crosswalk check attached. DOJ complete on 2026-11-11. HHS next.
 3. N-count gate on the unexplained disappearance cell, using pilot agencies.
 4. Definition spec locked in writing, including classification rulesets and the verification sample.
 5. Continuation gate on the pilot evidence: continue to build, convert to the short form match rate finding, or archive.
@@ -271,6 +330,8 @@ In order, cheapest first:
 - Pilot sequence set: DOJ first, then HHS. First check reproduces DOJ's published counts.
 - Source handling set: full history clones, committed raw snapshots with a manifest, archive captures allowed with provenance, pilot outputs kept out of the public repo.
 - Second differentiation pass complete. Gap confirmed open. Added adjacent work, the conflicting published growth rates, and three design signals for the pilot.
+- Added data findings from the source pull.
+- Added DOJ pilot results. The governmentwide COTS figures are now labeled upper bounds. The ruler gap is reframed as arithmetic.
 
 <!-- sources
 OMB 2025 consolidated inventory repository, identifier persistence and retirement instruction, 56 agency submissions: https://github.com/ombegov/2025-Federal-Agency-AI-Use-Case-Inventory
