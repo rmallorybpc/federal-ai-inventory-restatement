@@ -384,7 +384,7 @@ In order, cheapest first:
 1. Second differentiation pass against GAO and inspector general products. Complete on 2026-09-16. Gap open.
 2. Identifier stability pilot, with the field crosswalk check attached. DOJ complete on 2026-11-11. HHS complete on 2026-11-12.
 3. N-count gate on the unexplained disappearance cell, using pilot agencies. Passed on 2026-11-12 for an aggregate rate: about 87 across two agencies.
-4. Definition spec locked in writing, including classification rulesets and the verification sample.
+4. Definition spec locked in writing, including classification rulesets and the verification sample. Locked as definition-spec.md version 1.0 on 2026-11-12.
 5. Continuation gate on the pilot evidence: continue to build, convert to the short form match rate finding, or archive.
 
 ## Revision log
@@ -406,6 +406,7 @@ In order, cheapest first:
 - Added data findings from the source pull.
 - Added DOJ pilot results. The governmentwide COTS figures are now labeled upper bounds. The ruler gap is reframed as arithmetic.
 - Added HHS pilot results and conclusions across both agencies. N-count gate passed for an aggregate rate.
+- Definition spec locked as version 1.0.
 
 <!-- sources
 OMB 2025 consolidated inventory repository, identifier persistence and retirement instruction, 56 agency submissions: https://github.com/ombegov/2025-Federal-Agency-AI-Use-Case-Inventory
