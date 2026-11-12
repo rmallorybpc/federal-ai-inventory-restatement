@@ -1,6 +1,6 @@
 # Definition spec: Federal AI Inventory Restatement
 
-Version 1.0, 2026-11-12. Locked when committed to the repo.
+Version 1.1, 2026-11-12. Locked when committed to the repo.
 
 This spec fixes every definition and rule the build uses. It is committed to the repo before any classification starts. After it is locked, a change requires a dated entry in the amendment log, and any results produced under the earlier version are rerun.
 
@@ -122,7 +122,9 @@ Strict minimizes genuine new use cases. Loose maximizes them.
 
 ## 12. Verification
 
-- **Blind check.** Before the full build, a second rater labels a random 50 review rows with no proposals visible. Agreement and Cohen's kappa are reported. The full build proceeds only at 80 percent agreement or higher. Below that, the label rules are tightened and the check is rerun.
+- **Single analyst.** One analyst runs this study. No second human rater is used. This is stated on the methods page as a limitation.
+- **Consistency check.** The analyst labels a random 50 review rows from an agency not used in the pilots, with no proposals visible. An AI-assisted rater labels the same rows separately, without seeing the analyst's labels. Agreement and Cohen's kappa are reported, described as analyst versus AI-assisted rater, not as agreement between two people.
+- **Benchmark, not a gate.** 80 percent agreement is the benchmark. Below it, the label rules with the most disagreement are tightened, the change is logged, and the build continues. The result is published whatever it shows.
 - **Automatic match spot check.** A random 30 of the exact and mutual matches are reviewed, seed 20261111. More than 5 percent wrong pairs, meaning two or more of 30, triggers a review of every automatic match.
 - **Residual check.** A random 50 entries classified as new under the loose ruleset are confirmed against agency records, including prior inventories and public descriptions. The verified rate is reported next to the range.
 
@@ -138,3 +140,4 @@ Strict minimizes genuine new use cases. Loose maximizes them.
 |---|---|---|
 | 2026-11-12 | 0.1 | Draft from DOJ and HHS pilots. |
 | 2026-11-12 | 1.0 | Decisions settled: revised baseline primary, 80 percent blind check bar, 5 percent spot check trigger, gone labels aggregate only. Locked. |
+| 2026-11-12 | 1.1 | Blind check replaced by a single-analyst consistency check against an AI-assisted rater. The 80 percent bar becomes a reported benchmark and no longer blocks the build. Single analyst disclosed as a limitation. |

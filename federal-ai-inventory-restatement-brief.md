@@ -385,7 +385,13 @@ In order, cheapest first:
 2. Identifier stability pilot, with the field crosswalk check attached. DOJ complete on 2026-11-11. HHS complete on 2026-11-12.
 3. N-count gate on the unexplained disappearance cell, using pilot agencies. Passed on 2026-11-12 for an aggregate rate: about 87 across two agencies.
 4. Definition spec locked in writing, including classification rulesets and the verification sample. Locked as definition-spec.md version 1.0 on 2026-11-12.
-5. Continuation gate on the pilot evidence: continue to build, convert to the short form match rate finding, or archive.
+5. Continuation gate on the pilot evidence: continue to build, convert to the short form match rate finding, or archive. Continue, on 2026-11-12.
+
+Before the full build, from the definition spec: the single-analyst consistency check and the automatic match spot check. Neither blocks the build. Both are published.
+
+## Known limitation: single analyst
+
+One analyst runs this study. Every label is one person's judgment. The pilots used labels proposed by an AI-assisted rater and then confirmed by the analyst, so their agreement figures are not independent. The consistency check in the definition spec measures how far the written rules alone produce the same labels, by comparing the analyst's cold labels with a separate AI-assisted rater. It is not agreement between two people. The methods page states this.
 
 ## Revision log
 
@@ -407,6 +413,7 @@ In order, cheapest first:
 - Added DOJ pilot results. The governmentwide COTS figures are now labeled upper bounds. The ruler gap is reframed as arithmetic.
 - Added HHS pilot results and conclusions across both agencies. N-count gate passed for an aggregate rate.
 - Definition spec locked as version 1.0.
+- Continuation gate: Continue. Spec amended to version 1.1 for a single analyst. Added the single-analyst limitation.
 
 <!-- sources
 OMB 2025 consolidated inventory repository, identifier persistence and retirement instruction, 56 agency submissions: https://github.com/ombegov/2025-Federal-Agency-AI-Use-Case-Inventory
