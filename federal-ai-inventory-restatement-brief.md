@@ -261,6 +261,79 @@ Method notes for the definition spec:
 - Manual review needs the full agency 2025 list. A partial list of new ids hides every merge target.
 - Label agreement was 39 of 50, but the review was guided by proposals. It is not inter-rater evidence. A blind second rater is needed for that, best done on HHS.
 
+## HHS pilot results
+
+Completed 2026-11-12. Second increment of the identifier stability pilot. HHS's 2024 file has ids. Its 2025 file has none, so every match comes from text. Per agency detail stays in results/.
+
+Reconciliation:
+
+- 2024: 271 use cases in HHS's own file, OMB's original file, and OMB's revised file. Both 2024 baselines agree for HHS.
+- 2025: 446 in HHS's own file, 447 in OMB's. OMB carries one HHS entry that HHS's public file does not.
+- Both HHS files are Windows-1252, with extra header rows in the 2024 file.
+
+Matching:
+
+- 140 of 271 entries keep the exact same name. 15 more are strong two-way matches. 116 needed review.
+- HHS names either stay the same or change completely. Match scores barely moved between thresholds of 0.6 and 0.9.
+- HHS disclosed 10 renames inside the 2025 name field, written as "Renamed: X Previously: Y." The matcher missed them. The full build should read that text.
+- Matching within an operating division was the right design. Cross-division matches at 0.5 to 0.6 were all false.
+
+Retired anchor:
+
+- HHS defines a 2025 retired entry as one reported in the prior year's inventory. 49 entries are marked retired.
+- 33 match a 2024 entry. 5 match only the 2023 inventory and were absent from 2024. 11 match nothing in either year.
+- The matcher miss rate for HHS is at most 25 percent, in line with the DOJ calibration. It is a ceiling, because some of the 11 may never have been reported.
+
+Review design:
+
+- All 15 commercial rows, plus a random 40 of the remaining 101, seed 20261111.
+- Labels were proposed, then confirmed by the reviewer. Agreement was 53 of 55, but the review was guided. It is not inter-rater evidence.
+
+2024 side decomposition, estimated:
+
+| Outcome | Estimate | 95% range |
+|---|---|---|
+| Continues, same or near-same name | 155 | 155 |
+| Renamed | 23 | 13 to 33 |
+| Retired, disclosed | 5 | 0 to 10 |
+| Moved to COTS grid | 12 | 12 |
+| Dropped by scope or category change | 6 | 3 to 9 |
+| Gone, no counterpart | 71 | 59 to 82 |
+
+- About 66 percent of 2024 use cases continue in some form, against 90 percent at DOJ.
+- About 26 percent vanished without a retirement record, against 6.7 percent at DOJ. HHS's own definition says a stopped use case should be reported as retired.
+- Treat the gone estimate as a ceiling. Text matching cannot see renames beyond recognition, and the retired anchor shows they occur.
+- The 155 exact and mutual matches were not reviewed. A spot check belongs in the full build.
+
+Commercial product reporting:
+
+- HHS certified all 20 categories in its 2025 grid. DOJ filed no grid.
+- All 15 uses HHS flagged as commercial in 2024 left the individual list. 12 map to a 2025 grid category. 3 belong to 2024 categories that no longer exist, so they left reporting entirely.
+- This is the first direct evidence that the COTS rule shrank an agency's individual count. DOJ and HHS behaved in opposite ways under the same rule.
+
+Restatement:
+
+| Measure | 2024 base | 2025 count | Growth |
+|---|---|---|---|
+| Published | 271 | 446 | 64.6% |
+| 2024 ruler | 271 | 464 | 71.0% |
+| 2025 ruler | 253 | 446 | 76.0% |
+
+- Under either constant ruler, HHS growth runs 6 to 11 points above published. Same direction as DOJ.
+- The 2025 ruler row is exact for the COTS component. The 2024 ruler row is a floor, because commercial uses that began in 2025 have no use case records.
+- The gap between rulers is still arithmetic, not a finding.
+
+Churn:
+
+- Net growth of 175 hides much larger turnover. Roughly 270 of HHS's 446 entries in 2025 have no 2024 predecessor, while roughly 80 of its 2024 entries vanished or retired. Preliminary. Depends on the gone estimate.
+
+## Pilot conclusions across both agencies
+
+- Under a constant ruler, published growth understated the change at both agencies. The direction is the reverse of the conventional worry that inventories inflate adoption.
+- The COTS rule acted differently by agency. One agency kept commercial tools in its individual list. The other moved them all to the grid.
+- Identifier discipline varied from usable (DOJ, 79 percent persistence) to absent (HHS, no 2025 ids).
+- The disappearance cell is about 87 use cases across two agencies (16 at DOJ, about 71 at HHS). That clears the n-count gate for an aggregate disclosure rate. It does not support any per agency claim.
+
 ## Complexity
 
 This is the largest build in the portfolio. It involves dozens of agency CSVs with different schemas across two years, thousands of records, manual classification under multiple rulesets, a verification sample, and up to two ruler passes. Plan it as a multi week build.
@@ -309,8 +382,8 @@ All live data runs locally, not in a sandbox.
 In order, cheapest first:
 
 1. Second differentiation pass against GAO and inspector general products. Complete on 2026-09-16. Gap open.
-2. Identifier stability pilot, with the field crosswalk check attached. DOJ complete on 2026-11-11. HHS next.
-3. N-count gate on the unexplained disappearance cell, using pilot agencies.
+2. Identifier stability pilot, with the field crosswalk check attached. DOJ complete on 2026-11-11. HHS complete on 2026-11-12.
+3. N-count gate on the unexplained disappearance cell, using pilot agencies. Passed on 2026-11-12 for an aggregate rate: about 87 across two agencies.
 4. Definition spec locked in writing, including classification rulesets and the verification sample.
 5. Continuation gate on the pilot evidence: continue to build, convert to the short form match rate finding, or archive.
 
@@ -332,6 +405,7 @@ In order, cheapest first:
 - Second differentiation pass complete. Gap confirmed open. Added adjacent work, the conflicting published growth rates, and three design signals for the pilot.
 - Added data findings from the source pull.
 - Added DOJ pilot results. The governmentwide COTS figures are now labeled upper bounds. The ruler gap is reframed as arithmetic.
+- Added HHS pilot results and conclusions across both agencies. N-count gate passed for an aggregate rate.
 
 <!-- sources
 OMB 2025 consolidated inventory repository, identifier persistence and retirement instruction, 56 agency submissions: https://github.com/ombegov/2025-Federal-Agency-AI-Use-Case-Inventory
