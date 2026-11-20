@@ -209,19 +209,8 @@ Reconciliation:
 Identifiers:
 
 - 79.2 percent of 2024 ids reappear in 2025 (190 of 240).
-- 90.0 percent of 2024 use cases continue in some form once merges and renames are counted (216 of 240).
 - 8 use cases continue under a new id. Each one breaks OMB's rule that identifiers persist.
 - 59 of 191 id-matched pairs changed name. 17 changed substantially. A recurring pattern: a named product in 2024 became a generic function label in 2025.
-
-2024 side decomposition:
-
-| Outcome | Count | Share |
-|---|---|---|
-| Continues by id | 190 | 79.2% |
-| Merged into another entry | 18 | 7.5% |
-| Renamed under a new id | 8 | 3.3% |
-| Retired, disclosed | 8 | 3.3% |
-| Gone, no counterpart | 16 | 6.7% |
 
 Restatement:
 
@@ -240,10 +229,6 @@ Commercial product reporting:
 - DOJ is not in the 2025 COTS grid. Neither are several other agencies with individual use cases. The grid is a partial roster, which makes it a composition issue.
 - DOJ flagged 18 uses as commercial in 2024. 14 continue in the 2025 individual file. DOJ kept reporting commercial tools one by one, so the COTS rule barely affected its growth.
 - DOJ left its 2024 commercial flag blank on 223 of 241 rows. A blank does not mean non-commercial.
-
-Disappearance cell:
-
-- 16 of 240, or 6.7 percent. Too small to stand alone for one agency. Workable as an aggregate rate across agencies.
 
 Matcher calibration, for agencies without identifiers:
 
@@ -289,21 +274,10 @@ Review design:
 - All 15 commercial rows, plus a random 40 of the remaining 101, seed 20261111.
 - Labels were proposed, then confirmed by the reviewer. Agreement was 53 of 55, but the review was guided. It is not inter-rater evidence.
 
-2024 side decomposition, estimated:
+Outcomes:
 
-| Outcome | Estimate | 95% range |
-|---|---|---|
-| Continues, same or near-same name | 155 | 155 |
-| Renamed | 23 | 13 to 33 |
-| Retired, disclosed | 5 | 0 to 10 |
-| Moved to COTS grid | 12 | 12 |
-| Dropped by scope or category change | 6 | 3 to 9 |
-| Gone, no counterpart | 71 | 59 to 82 |
-
-- About 66 percent of 2024 use cases continue in some form, against 90 percent at DOJ.
-- About 26 percent vanished without a retirement record, against 6.7 percent at DOJ. HHS's own definition says a stopped use case should be reported as retired.
-- Treat the gone estimate as a ceiling. Text matching cannot see renames beyond recognition, and the retired anchor shows they occur.
-- The 155 exact and mutual matches were not reviewed. A spot check belongs in the full build.
+- Per agency outcome tables are kept in results/, out of the public repo. See the cross-agency section for combined figures.
+- The 155 exact and mutual matches were not reviewed at HHS. VA later tested these tiers against identifiers.
 
 Commercial product reporting:
 
@@ -323,16 +297,83 @@ Restatement:
 - The 2025 ruler row is exact for the COTS component. The 2024 ruler row is a floor, because commercial uses that began in 2025 have no use case records.
 - The gap between rulers is still arithmetic, not a finding.
 
-Churn:
+## VA results
 
-- Net growth of 175 hides much larger turnover. Roughly 270 of HHS's 446 entries in 2025 have no 2024 predecessor, while roughly 80 of its 2024 entries vanished or retired. Preliminary. Depends on the gone estimate.
+Completed 2026-11-14. First agency of the full build. VA has ids in both years, in two formats.
 
-## Pilot conclusions across both agencies
+Reconciliation:
 
-- Under a constant ruler, published growth understated the change at both agencies. The direction is the reverse of the conventional worry that inventories inflate adoption.
-- The COTS rule acted differently by agency. One agency kept commercial tools in its individual list. The other moved them all to the grid.
-- Identifier discipline varied from usable (DOJ, 79 percent persistence) to absent (HHS, no 2025 ids).
-- The disappearance cell is about 87 use cases across two agencies (16 at DOJ, about 71 at HHS). That clears the n-count gate for an aggregate disclosure rate. It does not support any per agency claim.
+- 2024: 227 use cases in VA's own file, 229 in both OMB files. OMB carries two entries VA's posted file lacks.
+- 2025: 367 in VA's file and in OMB's, with identical ids.
+
+Identifiers:
+
+- VA changed its id format. VA-36 in 2024 became VA-24-36 in 2025. No id matches directly, but the number carries over.
+- On the number, 222 of 227 ids from 2024 reappear, or 97.8 percent. Names confirm the crosswalk: 151 identical, 40 close, 31 renamed.
+- 143 entries carry a 25 prefix and are new. 102 of those are pre-deployment.
+
+Matcher test against identifiers:
+
+- With ids hidden, the matcher made 187 automatic matches. 3 were wrong, or 1.6 percent. This passes the spot check in the definition spec.
+- All 148 exact name matches were right. All 3 errors were in the mutual best tier, 3 of 39.
+- 40 rows fell to review. 35 were real continuations with changed names. For 26 of them the true partner was not in the top 3 candidates.
+- Manual review from candidate lists can mistake a renamed entry for a vanished one. The blind test below measured how often.
+
+Blind test against identifiers, 2026-11-20:
+
+- 40 VA review rows. VA's ids were masked. 35 rows have a real 2025 partner and 5 do not.
+- The analyst worked mostly from the matcher's three candidates. The AI-assisted rater searched the full 2025 list. Ten rows had appeared in earlier output and are excluded for the AI rater.
+
+| On 25 unseen rows with a real partner | Analyst | AI-assisted rater |
+|---|---|---|
+| Continuation found | 2 (8%) | 20 (80%) |
+| Wrong partner | 1 | 4 |
+| Wrongly labeled gone | 22 (88%) | 1 (4%) |
+
+- Both raters labeled all rows with no partner as gone or unsure, apart from one false match by the AI rater.
+- Agreement between raters was 22 percent, kappa 0.04.
+- The difference is the search method, not the rater. Review from candidate lists labels most renamed entries as gone. Full-list search does not. The definition spec now requires a documented full-list search before any gone label.
+- The AI rater knew from earlier output that most rows had partners. That hint may have pushed it to search harder. The analyst saw the same hint and still labeled by candidates, so the method effect is not explained by the hint.
+
+Retired entries:
+
+- 74 of VA's 367 entries in 2025 are marked retired, against 1 in 2024. 73 carry a 2024 id.
+- Published growth is 61.7 percent. Growth in active use cases is 29.6 percent.
+
+Commercial product reporting:
+
+- VA flagged 63 of 227 use cases as listed commercial products in 2024. Some flags look loose.
+- 59 of the 63 still appear in the 2025 individual list, even though VA filed a grid with 9 categories.
+
+## Composition across all agencies
+
+From OMB's counts, recorded 2026-11-20. No judgment calls.
+
+- Nine agencies reported in 2024 and not in 2025, totaling 171 use cases. One of them accounts for 137.
+- Nine agencies reported in 2025 and not in 2024, totaling 60 use cases.
+- Published growth, 2,133 to 3,611, is 69.3 percent.
+- Growth among agencies that reported in both years, 1,962 to 3,551, is 81.0 percent.
+- Composition change pulled published growth down by about 12 points. Same direction as the consolidation effects, opposite to the retired entries effect.
+
+Research and development scope:
+
+- 2024 guidance excluded research and development use cases, except those influencing decisions about individuals or with an approved agreement to move into agency operations.
+- 2025 guidance excludes basic or applied research, but includes research whose purpose is to develop particular AI applications for agency use, plus the same two exceptions. The 2025 rule is broader than the 2024 rule.
+- Two agencies show the pattern this predicts. Counts were 33, 18, and 425 at one, and 178, 79, and 340 at the other, across 2023, 2024, and 2025. Together they account for 668 of the net growth of 1,478.
+- Few 2025 entries at these two agencies trace to earlier inventories by exact name: 47 to 2023 only, 84 to 2024. 634 have no prior record. Of those, 483 are pre-deployment.
+- The 634 are an upper bound on the scope effect at these two agencies, not an estimate. Some are renamed entries. Some are operational uses reported for the first time.
+- Test: classify a random sample of the 634 against the two scope rules. The share that is research to develop an agency application estimates the scope component. Any basic research in the sample is reported against the 2025 rule as well.
+
+## Conclusions across three agencies
+
+- The HHS gone labels rest on full-list keyword searches by the AI-assisted rater. The analyst's confirmations add little independent checking, given the VA blind test. The VA false gone rate for full-list search, about 4 percent, is the error that applies.
+
+- The published count moves for reasons that differ by agency and pull in different directions. Consolidation and commercial moves shrink the 2025 count. Retired entries held in the inventory enlarge it. The net direction is not the same everywhere.
+- An earlier version of this section said published growth understated the change at both pilot agencies. That holds for merges, commercial moves, and scope. It did not net out retired entries, which push the other way.
+- The COTS rule acted differently by agency. Two agencies kept commercial tools in the individual list. One moved them all to the grid.
+- Identifier discipline ranged from persistent ids in a new format, to ids with some renumbering, to no 2025 ids at all.
+- Attrition and disclosure are separate. Agencies lost comparable shares of their 2024 use cases but differed sharply in how much they reported as retired. Combined across three agencies, about 92 of 738 use cases from 2024 have no 2025 counterpart and no retirement record. That figure is a ceiling, because text review can miss renames.
+- The disappearance cell clears the n-count gate for an aggregate rate. No per agency disappearance figure is published.
 
 ## Complexity
 
@@ -383,7 +424,7 @@ In order, cheapest first:
 
 1. Second differentiation pass against GAO and inspector general products. Complete on 2026-09-16. Gap open.
 2. Identifier stability pilot, with the field crosswalk check attached. DOJ complete on 2026-11-11. HHS complete on 2026-11-12.
-3. N-count gate on the unexplained disappearance cell, using pilot agencies. Passed on 2026-11-12 for an aggregate rate: about 87 across two agencies.
+3. N-count gate on the unexplained disappearance cell, using pilot agencies. Passed on 2026-11-12 for an aggregate rate.
 4. Definition spec locked in writing, including classification rulesets and the verification sample. Locked as definition-spec.md version 1.0 on 2026-11-12.
 5. Continuation gate on the pilot evidence: continue to build, convert to the short form match rate finding, or archive. Continue, on 2026-11-12.
 
@@ -414,6 +455,10 @@ One analyst runs this study. Every label is one person's judgment. The pilots us
 - Added HHS pilot results and conclusions across both agencies. N-count gate passed for an aggregate rate.
 - Definition spec locked as version 1.0.
 - Continuation gate: Continue. Spec amended to version 1.1 for a single analyst. Added the single-analyst limitation.
+- Added VA results. Corrected the cross-agency conclusion on direction. Moved per agency outcome tables and disappearance rates out of the public brief.
+- Spec amended to version 1.2: active use case growth added as a headline metric, and the consistency check became a blind test against VA identifiers.
+- Added composition across all agencies and the research and development scope evidence, with the 2024 and 2025 rule text.
+- Added the VA blind test result. Spec amended to version 1.3: full-list search required before a gone label. Noted what the HHS gone labels rest on.
 
 <!-- sources
 OMB 2025 consolidated inventory repository, identifier persistence and retirement instruction, 56 agency submissions: https://github.com/ombegov/2025-Federal-Agency-AI-Use-Case-Inventory

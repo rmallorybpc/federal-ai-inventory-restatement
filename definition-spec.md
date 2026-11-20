@@ -1,6 +1,6 @@
 # Definition spec: Federal AI Inventory Restatement
 
-Version 1.1, 2026-11-12. Locked when committed to the repo.
+Version 1.4, 2026-11-20. Locked when committed to the repo.
 
 This spec fixes every definition and rule the build uses. It is committed to the repo before any classification starts. After it is locked, a change requires a dated entry in the amendment log, and any results produced under the earlier version are rerun.
 
@@ -27,6 +27,8 @@ This spec fixes every definition and rule the build uses. It is committed to the
 - Every source file is committed under data/raw with its URL, retrieval date, size, SHA-256 hash, and encoding in data/raw/manifest.csv.
 
 ## 4. Text handling
+
+- Identifier normalization: uppercase, spaces removed, every dash character made a plain hyphen, leading zeros dropped from the number. Agencies format ids inconsistently, sometimes within one agency.
 
 - Each file is decoded with the encoding recorded in the manifest. Agency files are not assumed to be UTF-8.
 - Normalization for all comparisons: Unicode NFKC, curly quotes to straight, en and em dashes to hyphens, whitespace collapsed, lowercase.
@@ -61,12 +63,26 @@ Every 2024 use case gets exactly one label. When more than one could apply, the 
 | `merged` | The matched 2025 entry also carries another 2024 entry, or several 2024 entries point to one 2025 entry. |
 | `cots` | No individual 2025 entry, the use is a listed commercial product use, and the agency certified a matching 2025 grid category as in use. |
 | `scope` | No individual 2025 entry, and either the 2024 entry states the AI is unused or not AI, or its 2024 commercial category has no 2025 equivalent. |
-| `gone` | Active in 2024, no 2025 counterpart, and no documented reason. |
+| `gone` | Active in 2024, no 2025 counterpart after the search in section 6a, and no documented reason. |
 | `unsure` | Still unresolved after review against the full agency 2025 list. |
 
 Rules settled by the pilots:
 
 - An active use case that vanished is `gone`, even when it probably ended. Only the agency's own disclosure makes it `retired`.
+
+## 6a. Search before gone
+
+The candidate list from the matcher is a starting point, never the search. On VA, the true partner of a renamed entry was outside the top 3 candidates for 26 of 35 rows. A reviewer who stayed inside the candidates labeled 86 percent of real continuations as gone.
+
+Before a row is labeled `gone`, the reviewer searches the agency's full 2025 list for:
+
+1. The product or vendor name, and any short form or acronym.
+2. Two or three distinctive words from the 2024 purpose.
+3. The program or system name, if one is given.
+
+The search covers every office in the agency, not only the 2024 office. Entries moved between offices in all three pilot agencies. The terms searched are recorded in `notes`. A `gone` label with no recorded search is invalid and returns to review.
+
+Review sheets list the three candidates and state at the top that the full list must be searched.
 - A merge target is often an entry that already continues an older use case. Manual review uses the full agency 2025 list, never a list of new entries alone.
 - An agency that filed no 2025 grid cannot produce a `cots` label. Its vanished commercial uses are `gone`.
 - A 2025 identifier reused for a different use case is logged as a persistence violation and treated as unmatched.
@@ -100,13 +116,14 @@ Strict minimizes genuine new use cases. Loose maximizes them.
 - **2024 ruler:** the 2025 count restated at 2024 granularity and scope. Merged, cots, and scope rows are added to the 2025 count.
 - **2025 ruler:** the 2024 count restated at 2025 granularity and scope. The same rows are removed from the 2024 base.
 - For the commercial component, the 2025 ruler is exact. The 2024 ruler is a floor, because commercial uses that began in 2025 have no use case records.
-- The research and development scope change is not observable in either year's data. It is reported as unmeasured, with any agency statements quoted.
+- Research and development scope: 2024 excluded research use cases. 2025 includes research whose purpose is to develop an AI application for agency use. Where an agency's 2025 count rises sharply with entries that have no prior record, a random sample of those entries is classified as `research-app`, `research-basic`, `operational`, or `unsure`. The `research-app` share, scaled to the pool, is the scope component. It is restated in one direction only: removed from 2025 under the 2024 ruler.
 - The gap between rulers that comes from applying the same adjustments to two different bases is arithmetic. It is not reported as a finding.
 
 ## 10. Headline metrics
 
 - Published growth, against both 2024 baselines.
 - Growth with duplicates removed.
+- Growth in active use cases: entries the agency marks retired are excluded in both years. Uses the agency's own stage field. No judgment calls.
 - Growth under each ruler, under each ruleset. Four figures, reported as a range.
 - Continuity rate: 2024 use cases that continue in some form.
 - Disappearance rate: share of 2024 use cases labeled gone. Aggregate only.
@@ -123,9 +140,9 @@ Strict minimizes genuine new use cases. Loose maximizes them.
 ## 12. Verification
 
 - **Single analyst.** One analyst runs this study. No second human rater is used. This is stated on the methods page as a limitation.
-- **Consistency check.** The analyst labels a random 50 review rows from an agency not used in the pilots, with no proposals visible. An AI-assisted rater labels the same rows separately, without seeing the analyst's labels. Agreement and Cohen's kappa are reported, described as analyst versus AI-assisted rater, not as agreement between two people.
-- **Benchmark, not a gate.** 80 percent agreement is the benchmark. Below it, the label rules with the most disagreement are tightened, the change is logged, and the build continues. The result is published whatever it shows.
-- **Automatic match spot check.** A random 30 of the exact and mutual matches are reviewed, seed 20261111. More than 5 percent wrong pairs, meaning two or more of 30, triggers a review of every automatic match.
+- **Blind test against identifiers.** VA has identifiers in both years, so it supplies ground truth. The analyst labels VA's review rows with the 2025 identifiers masked and no proposals visible. An AI-assisted rater labels the same rows separately. Both are scored against VA's identifiers. Reported: the share of true continuations each rater found, the share wrongly labeled gone, and agreement between the two raters with Cohen's kappa. The false gone rate is used to widen the range on gone estimates for agencies without identifiers. Result, 2026-11-20: see the brief. The analyst's candidate-based review missed most renames. The full-list search found 80 percent of continuations on unseen rows, with a 4 percent false gone rate.
+- **Benchmark, not a gate.** 80 percent of true continuations found is the benchmark. Below it, the label rules with the most disagreement are tightened, the change is logged, and the build continues. The result is published whatever it shows.
+- **Automatic match spot check.** Where an agency has identifiers in both years, the exact and mutual matches are scored against the identifiers. Elsewhere, a random 30 are reviewed, seed 20261111. More than 5 percent wrong pairs, meaning two or more of 30, triggers a review of every automatic match.
 - **Residual check.** A random 50 entries classified as new under the loose ruleset are confirmed against agency records, including prior inventories and public descriptions. The verified rate is reported next to the range.
 
 ## 13. Publication rules
@@ -141,3 +158,6 @@ Strict minimizes genuine new use cases. Loose maximizes them.
 | 2026-11-12 | 0.1 | Draft from DOJ and HHS pilots. |
 | 2026-11-12 | 1.0 | Decisions settled: revised baseline primary, 80 percent blind check bar, 5 percent spot check trigger, gone labels aggregate only. Locked. |
 | 2026-11-12 | 1.1 | Blind check replaced by a single-analyst consistency check against an AI-assisted rater. The 80 percent bar becomes a reported benchmark and no longer blocks the build. Single analyst disclosed as a limitation. |
+| 2026-11-14 | 1.2 | Added growth in active use cases as a headline metric. Consistency check became a blind test scored against VA identifiers. Automatic matches are scored against identifiers where both years have them. |
+| 2026-11-20 | 1.3 | Added section 6a. A `gone` label requires a documented full-list search across offices. Driven by the VA blind test. |
+| 2026-11-20 | 1.4 | Added identifier normalization. Research and development scope is now measured by a classified sample where an agency shows the pattern. |
