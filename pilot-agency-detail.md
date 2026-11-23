@@ -52,7 +52,7 @@ Completed 2026-11-23. Private. Do not publish the gone figure by agency.
 
 ## NASA detail
 
-- 18 of 18 continue. No retired, no gone.
+- 17 continue, 1 retired in the 2025 file (Volcano SensorWeb; the broader SensorWeb entry continues). No gone.
 
 ## DOE detail
 
@@ -68,6 +68,19 @@ Completed 2026-11-23. Private. Do not publish the gone figure by agency.
 - Share leaving the active inventory: retired 13%, gone 11% of 79, total 24%.
 - Software list block: E25-050 to E25-080.
 - Tool level labels: results/doe/review-doe.csv.
+
+## USDA detail
+
+| Label | Count |
+|---|---|
+| Continues | 54 |
+| Renamed | 7 |
+| Retired | 25 (7 in 2024 file, 18 in 2025 file) |
+| Gone, no record | 2 (2.4% of 82 active) |
+| Unsure | 1 (U24-087, candidate U25-138) |
+
+- Gone rows: OCIO comment analysis tool, Forest Service hurricane impact descriptions.
+- Tool level labels: results/usda/review-usda.csv.
 
 ## Composition detail
 

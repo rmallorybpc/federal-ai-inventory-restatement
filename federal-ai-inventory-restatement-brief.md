@@ -375,7 +375,7 @@ Findings:
 Completed 2026-11-23. Third agency of the full build.
 
 - 2024: 18 entries. 2025: 425, of which 5 are retired.
-- All 18 entries from 2024 continue into 2025. 17 match by exact name. One spells out an abbreviation.
+- All 18 entries from 2024 link to 2025. 17 continue. One is marked retired in the 2025 file. 17 match by exact name, and one spells out an abbreviation.
 - All 18 were in production or in mission in 2024. None were in development. The 2024 file reads as a list of operational tools, which fits the 2024 exclusion of research.
 - About 400 active entries in 2025 have no 2024 link. The agency does not cite prior inventory numbers, so no hidden links remain.
 - Matching does not shrink this agency's scope pool. The field rule count of 355 stands, with the judgment range of 256 to 355.
@@ -392,6 +392,17 @@ Completed 2026-11-23. Fourth agency of the full build.
 - The 31 entries that say the AI was integrated into a commercial product without an identified benefit sit in one block. They are desktop and office software products with no stated purpose. They read as a software list, not use cases.
 - The matcher paired two entries with unrelated programs at other sites at a score above 0.6. Review caught both.
 - The commercial file named one 2024 tool, a security product. That entry is labeled cots.
+
+## USDA results
+
+Completed 2026-11-23. Fifth agency of the full build.
+
+- 2024: 89 entries, 7 marked retired. 2025: 162, of which 19 are retired.
+- 72 of 89 names carry over exactly. Seven more changed wording but kept the same purpose.
+- Labels: 54 continue, 7 renamed, 25 retired. One row is unresolved. The rest have no counterpart and are counted in the aggregate rate only.
+- Retirement was disclosed in both years. 18 active entries from 2024 are marked retired in 2025. Every retired entry in 2025 traces to 2024. This agency reported what it stopped more completely than any agency so far.
+- Active growth, with each year's retired entries excluded, is 74.4 percent, 82 to 143.
+- 35 of the 82 active entries in 2025 with no 2024 link meet the research field rule.
 
 ## Composition across all agencies
 
@@ -420,7 +431,12 @@ Research and development scope:
 - On the 2024 ruler, removing the scope entries lowers growth from 69.3% to 40.5% under the rule. The range is 32.9% to 45.1%. This is one component on one ruler, not a restated figure.
 - The pool is an upper bound. An exact name match misses renamed entries, so some entries counted as new existed in 2024. Matching at each agency will shrink the pool.
 - 13 entries use the topic "Other - Applied Mathematical Sciences". The rule as written excludes them. They are reported as a sensitivity note.
-- Matching at one of the five agencies cut its pool of entries with no prior record from 241 to 116. Entries meeting the rule fell from 141 to 51, plus 7 that the agency tagged as 2024 entries. Across the five agencies the rule count falls from 615 to about 525. On the 2024 ruler, growth after removing them is 44.7 percent. The other four agencies will shrink as they are matched.
+- Scope recount from reviewed matches, 2026-11-23. Four of the five agencies now have reviewed links. The fifth still uses exact names and stays an upper bound.
+- 548 entries meet the field rule. Removing them lowers growth on the 2024 ruler from 69.3 percent to 43.6 percent, a scope component of about 26 points.
+- Judgment labels for the two agencies with a labeled sample, scaled to their reviewed pools, give a range of 446 to 721 entries. Growth after removal ranges from 35.5 to 48.4 percent. The component ranges from 21 to 34 points.
+- Treating entries that cite a prior inventory number as prior records changes the count by 7 and growth by 0.3 points.
+- Matching shrank the pool most where the agency had reworded names. At one agency the rule count fell from 141 to 58. At the two largest scope agencies it barely moved.
+- This is one component on one ruler. It is not a restated growth figure. The other components and the 2025 ruler come later in the build.
 
 ## Conclusions across three agencies
 
@@ -517,6 +533,9 @@ One analyst runs this study. Every label is one person's judgment. The pilots us
 - Spec amended to version 1.2: active use case growth added as a headline metric, and the consistency check became a blind test against VA identifiers.
 - Added composition across all agencies and the research and development scope evidence, with the 2024 and 2025 rule text.
 - Scope sample result. Scope component moved to a field rule. Spec version 1.5.
+- USDA results added.
+- NASA: one linked entry is retired in the 2025 file. Label corrected.
+- Scope component recounted from reviewed matches. Range set from the judgment labels.
 - NASA and DOE results added.
 - Corrected active growth for two agencies. The first figures removed entries retired in 2025 from the 2024 base. Each year now excludes only its own retired entries, as in the VA figure.
 - DOI results added. Disclosed link rule. Scope pool revised after DOI matching. Combined gone ceiling updated to four agencies.
