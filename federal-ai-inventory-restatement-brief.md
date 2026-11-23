@@ -362,7 +362,16 @@ Research and development scope:
 - Two agencies show the pattern this predicts. Counts were 33, 18, and 425 at one, and 178, 79, and 340 at the other, across 2023, 2024, and 2025. Together they account for 668 of the net growth of 1,478.
 - Few 2025 entries at these two agencies trace to earlier inventories by exact name: 47 to 2023 only, 84 to 2024. 634 have no prior record. Of those, 483 are pre-deployment.
 - The 634 are an upper bound on the scope effect at these two agencies, not an estimate. Some are renamed entries. Some are operational uses reported for the first time.
-- Test: classify a random sample of the 634 against the two scope rules. The share that is research to develop an agency application estimates the scope component. Any basic research in the sample is reported against the 2025 rule as well.
+- Scope sample, 2026-11-23: 20 entries per agency, labeled by two raters. Agreement 13 of 40, kappa 0.09. Both raters labeled most of one agency's sample as research (13 and 15 of 20). They split on the other (5 and 18 of 20).
+- Because the judgment did not reproduce, the scope component uses a field rule: topic area Science and stage not Deployed. On the sample, the rule agreed with the first rater on 30 of 38 rows and the second on 21 of 39.
+- The rule is a proxy. It misses research filed under other topics and counts science group tools that are operational. Judgment labels are reported beside it as a check.
+- 31 entries at one agency say the AI was automatically integrated into a commercial product without an identified benefit. They are counted with the commercial product adjustments, not as new use.
+- Field rule applied, 2026-11-23. 671 of 3,611 entries in 2025 meet the rule. Five agencies hold 663 of them. Every other agency has 3 or fewer.
+- Among entries with no 2023 or 2024 name match at those five agencies, 615 meet the rule.
+- Judgment labels exist for two of the five agencies only. Scaled to their pools, they give 311 to 571 entries in place of the rule's 410 for those two. The other three use the rule alone.
+- On the 2024 ruler, removing the scope entries lowers growth from 69.3% to 40.5% under the rule. The range is 32.9% to 45.1%. This is one component on one ruler, not a restated figure.
+- The pool is an upper bound. An exact name match misses renamed entries, so some entries counted as new existed in 2024. Matching at each agency will shrink the pool.
+- 13 entries use the topic "Other - Applied Mathematical Sciences". The rule as written excludes them. They are reported as a sensitivity note.
 
 ## Conclusions across three agencies
 
@@ -458,6 +467,8 @@ One analyst runs this study. Every label is one person's judgment. The pilots us
 - Added VA results. Corrected the cross-agency conclusion on direction. Moved per agency outcome tables and disappearance rates out of the public brief.
 - Spec amended to version 1.2: active use case growth added as a headline metric, and the consistency check became a blind test against VA identifiers.
 - Added composition across all agencies and the research and development scope evidence, with the 2024 and 2025 rule text.
+- Scope sample result. Scope component moved to a field rule. Spec version 1.5.
+- Field rule applied governmentwide. Scope component range added.
 - Added the VA blind test result. Spec amended to version 1.3: full-list search required before a gone label. Noted what the HHS gone labels rest on.
 
 <!-- sources

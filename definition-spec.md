@@ -1,6 +1,6 @@
 # Definition spec: Federal AI Inventory Restatement
 
-Version 1.4, 2026-11-20. Locked when committed to the repo.
+Version 1.5, 2026-11-23. Locked when committed to the repo.
 
 This spec fixes every definition and rule the build uses. It is committed to the repo before any classification starts. After it is locked, a change requires a dated entry in the amendment log, and any results produced under the earlier version are rerun.
 
@@ -116,7 +116,9 @@ Strict minimizes genuine new use cases. Loose maximizes them.
 - **2024 ruler:** the 2025 count restated at 2024 granularity and scope. Merged, cots, and scope rows are added to the 2025 count.
 - **2025 ruler:** the 2024 count restated at 2025 granularity and scope. The same rows are removed from the 2024 base.
 - For the commercial component, the 2025 ruler is exact. The 2024 ruler is a floor, because commercial uses that began in 2025 have no use case records.
-- Research and development scope: 2024 excluded research use cases. 2025 includes research whose purpose is to develop an AI application for agency use. Where an agency's 2025 count rises sharply with entries that have no prior record, a random sample of those entries is classified as `research-app`, `research-basic`, `operational`, or `unsure`. The `research-app` share, scaled to the pool, is the scope component. It is restated in one direction only: removed from 2025 under the 2024 ruler.
+- Research and development scope: 2024 excluded research use cases. 2025 includes research whose purpose is to develop an AI application for agency use. The scope component is measured by a field rule, not by judgment: an entry counts as research when its topic area is Science and its stage is not Deployed. Applied to entries with no 2023 or 2024 record. Restated in one direction only: removed from 2025 under the 2024 ruler.
+- Judgment labels (`research-app`, `research-basic`, `operational`) are reported beside the rule as a check, never as the estimate. Two raters agreed on 13 of 40 sample rows, kappa 0.09, so the judgment cannot carry the figure.
+- Entries whose benefits text says the AI was automatically integrated without an identified benefit are counted separately and grouped with the commercial product adjustments.
 - The gap between rulers that comes from applying the same adjustments to two different bases is arithmetic. It is not reported as a finding.
 
 ## 10. Headline metrics
@@ -161,3 +163,4 @@ Strict minimizes genuine new use cases. Loose maximizes them.
 | 2026-11-14 | 1.2 | Added growth in active use cases as a headline metric. Consistency check became a blind test scored against VA identifiers. Automatic matches are scored against identifiers where both years have them. |
 | 2026-11-20 | 1.3 | Added section 6a. A `gone` label requires a documented full-list search across offices. Driven by the VA blind test. |
 | 2026-11-20 | 1.4 | Added identifier normalization. Research and development scope is now measured by a classified sample where an agency shows the pattern. |
+| 2026-11-23 | 1.5 | Scope component moved to a field rule (topic Science, not deployed). Judgment labels kept as a check. Embedded features with no identified benefit counted separately. |
