@@ -31,6 +31,25 @@ Notes:
 - VA: 2 entries with a 24 prefix have no row in VA's posted 2024 file. VA-1069 may be a different product under a reused id.
 - Tool level detail is in each agency's results subfolder.
 
+## DOI detail
+
+Completed 2026-11-23. Private. Do not publish the gone figure by agency.
+
+| Label | Count |
+|---|---|
+| Continues | 87 |
+| Renamed | 18 |
+| Merged | 26 (12 groups, 6 of them 2024 duplicates) |
+| Retired, disclosed in 2025 file | 11 |
+| Gone, no record | 38 (22.5% of 169 active) |
+
+- Sensitivity: D24-001 to 003 (in-house chatbot and its service layers) may have been replaced by Copilot Chat in the commercial file (50,000+ users). Not disclosed. If counted as replaced, gone is 35, or 20.7%.
+- Seven commercial tools checked against the commercial file on 2026-11-23. None named there.
+- 8 tagged 2025 entries with no OMB 2024 row: D25-066 to 072, D25-194.
+- 2 retired 2025 entries with no 2024 link: D25-154, D25-179.
+- Share leaving the active inventory: retired 6%, gone 21% of 180, total 27%.
+- Tool level labels: results/doi/review-doi.csv.
+
 ## Composition detail
 
 - In 2024 only: CFPB 4, EEOC 8, OPM 2, PRC 1, PT 5, USAGM 8, USAID 137, USCCR 2, USTDA 4. Total 171.

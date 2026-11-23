@@ -1,6 +1,6 @@
 # Definition spec: Federal AI Inventory Restatement
 
-Version 1.5, 2026-11-23. Locked when committed to the repo.
+Version 1.6, 2026-11-23. Locked when committed to the repo.
 
 This spec fixes every definition and rule the build uses. It is committed to the repo before any classification starts. After it is locked, a change requires a dated entry in the amendment log, and any results produced under the earlier version are rerun.
 
@@ -164,3 +164,4 @@ Strict minimizes genuine new use cases. Loose maximizes them.
 | 2026-11-20 | 1.3 | Added section 6a. A `gone` label requires a documented full-list search across offices. Driven by the VA blind test. |
 | 2026-11-20 | 1.4 | Added identifier normalization. Research and development scope is now measured by a classified sample where an agency shows the pattern. |
 | 2026-11-23 | 1.5 | Scope component moved to a field rule (topic Science, not deployed). Judgment labels kept as a check. Embedded features with no identified benefit counted separately. |
+| 2026-11-23 | 1.6 | A 2025 name that cites a prior inventory number is a disclosed link, even when the OMB file lacks the number. Retirement is read from both years' stage fields. Duplicate 2024 entries under one name are labeled merged and counted separately from consolidation. |

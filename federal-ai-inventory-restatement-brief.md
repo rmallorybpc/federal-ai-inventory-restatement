@@ -345,6 +345,31 @@ Commercial product reporting:
 - VA flagged 63 of 227 use cases as listed commercial products in 2024. Some flags look loose.
 - 59 of the 63 still appear in the 2025 individual list, even though VA filed a grid with 9 categories.
 
+## DOI results
+
+Completed 2026-11-23. Second agency of the full build. The OMB 2024 file carries no DOI ids.
+
+Reconciliation:
+
+- 2024: 180 entries in the OMB file. 2025: 247 entries, one with no name.
+- Name matching alone linked 6 of 180. DOI reworded most names, so name scores were not enough.
+
+Disclosed links:
+
+- 125 of 247 entries in 2025 carry a tag in the name that cites a 2024 inventory number. The numbers are DOI's internal ones. The OMB 2024 file does not carry them.
+- The tags settled most matches. They also exposed errors in the name matcher. Three pairings that scored 0.6 or higher were wrong, and the tag pointed to the right entry.
+- 8 tagged entries have no row in the OMB 2024 file. DOI says they existed in 2024. The published file left them out.
+- Definition spec rule: a 2025 name that cites a prior inventory number counts as a disclosed link, even when the OMB file lacks the number.
+
+Labels, 180 entries from 2024: 87 continue, 18 renamed, 26 merged, 11 retired. The rest have no counterpart and are counted in the aggregate rate only.
+
+Findings:
+
+- Retirement was disclosed in the 2025 file, not the 2024 file. 13 entries in 2025 carry the stage Retired. 11 trace to 2024. The build checks both years for retirement.
+- Half the merges are 2024 duplicates. Six pairs were listed twice in 2024 under the same name. The duplicates inflated the 2024 base. They are separate from consolidation.
+- Active growth, retired entries excluded in both years, is 38.5 percent. 116 active entries in 2025 have no 2024 link.
+- The commercial product file lists 20 rows for DOI. They are categories of use, not tools. A tool that moved there cannot be matched unless the product is named. The cots label is undercounted at every agency for this reason.
+
 ## Composition across all agencies
 
 From OMB's counts, recorded 2026-11-20. No judgment calls.
@@ -372,6 +397,7 @@ Research and development scope:
 - On the 2024 ruler, removing the scope entries lowers growth from 69.3% to 40.5% under the rule. The range is 32.9% to 45.1%. This is one component on one ruler, not a restated figure.
 - The pool is an upper bound. An exact name match misses renamed entries, so some entries counted as new existed in 2024. Matching at each agency will shrink the pool.
 - 13 entries use the topic "Other - Applied Mathematical Sciences". The rule as written excludes them. They are reported as a sensitivity note.
+- Matching at one of the five agencies cut its pool of entries with no prior record from 241 to 116. Entries meeting the rule fell from 141 to 51, plus 7 that the agency tagged as 2024 entries. Across the five agencies the rule count falls from 615 to about 525. On the 2024 ruler, growth after removing them is 44.7 percent. The other four agencies will shrink as they are matched.
 
 ## Conclusions across three agencies
 
@@ -381,7 +407,7 @@ Research and development scope:
 - An earlier version of this section said published growth understated the change at both pilot agencies. That holds for merges, commercial moves, and scope. It did not net out retired entries, which push the other way.
 - The COTS rule acted differently by agency. Two agencies kept commercial tools in the individual list. One moved them all to the grid.
 - Identifier discipline ranged from persistent ids in a new format, to ids with some renumbering, to no 2025 ids at all.
-- Attrition and disclosure are separate. Agencies lost comparable shares of their 2024 use cases but differed sharply in how much they reported as retired. Combined across three agencies, about 92 of 738 use cases from 2024 have no 2025 counterpart and no retirement record. That figure is a ceiling, because text review can miss renames.
+- Attrition and disclosure are separate. Agencies lost comparable shares of their 2024 use cases but differed sharply in how much they reported as retired. Combined across three agencies, about 92 of 738 use cases from 2024 have no 2025 counterpart and no retirement record. That figure is a ceiling, because text review can miss renames. With the fourth agency added, the combined figure is about 130 of 907, or 14 percent.
 - The disappearance cell clears the n-count gate for an aggregate rate. No per agency disappearance figure is published.
 
 ## Complexity
@@ -468,6 +494,7 @@ One analyst runs this study. Every label is one person's judgment. The pilots us
 - Spec amended to version 1.2: active use case growth added as a headline metric, and the consistency check became a blind test against VA identifiers.
 - Added composition across all agencies and the research and development scope evidence, with the 2024 and 2025 rule text.
 - Scope sample result. Scope component moved to a field rule. Spec version 1.5.
+- DOI results added. Disclosed link rule. Scope pool revised after DOI matching. Combined gone ceiling updated to four agencies.
 - Field rule applied governmentwide. Scope component range added.
 - Added the VA blind test result. Spec amended to version 1.3: full-list search required before a gone label. Noted what the HHS gone labels rest on.
 
