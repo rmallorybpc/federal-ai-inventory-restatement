@@ -367,7 +367,7 @@ Findings:
 
 - Retirement was disclosed in the 2025 file, not the 2024 file. 13 entries in 2025 carry the stage Retired. 11 trace to 2024. The build checks both years for retirement.
 - Half the merges are 2024 duplicates. Six pairs were listed twice in 2024 under the same name. The duplicates inflated the 2024 base. They are separate from consolidation.
-- Active growth, retired entries excluded in both years, is 38.5 percent. 116 active entries in 2025 have no 2024 link.
+- Active growth, with each year's retired entries excluded, is 30.0 percent, 180 to 234. 116 active entries in 2025 have no 2024 link.
 - The commercial product file lists 20 rows for DOI. They are categories of use, not tools. A tool that moved there cannot be matched unless the product is named. The cots label is undercounted at every agency for this reason.
 
 ## NASA results
@@ -387,7 +387,7 @@ Completed 2026-11-23. Fourth agency of the full build.
 - 2024: 79 entries, 1 marked retired. 2025: 340, of which 15 are retired.
 - Labels: 56 continue, 3 renamed, 10 retired, 1 moved to the commercial file. The rest have no counterpart and are counted in the aggregate rate only.
 - Retirement was disclosed in both years. 10 entries from 2024 are marked retired in 2025, one of them in both files. 5 retired entries in 2025 have no 2024 link.
-- Active growth is 371 percent, 69 to 325. 266 active entries in 2025 have no 2024 link.
+- Active growth, with each year's retired entries excluded, is 317 percent, 78 to 325. 266 active entries in 2025 have no 2024 link.
 - 66 of the 266 meet the research field rule. Most new entries are filed under administrative, IT, and other topics. Research scope explains little of this agency's growth.
 - The 31 entries that say the AI was integrated into a commercial product without an identified benefit sit in one block. They are desktop and office software products with no stated purpose. They read as a software list, not use cases.
 - The matcher paired two entries with unrelated programs at other sites at a score above 0.6. Review caught both.
@@ -430,7 +430,7 @@ Research and development scope:
 - An earlier version of this section said published growth understated the change at both pilot agencies. That holds for merges, commercial moves, and scope. It did not net out retired entries, which push the other way.
 - The COTS rule acted differently by agency. Two agencies kept commercial tools in the individual list. One moved them all to the grid.
 - Identifier discipline ranged from persistent ids in a new format, to ids with some renumbering, to no 2025 ids at all.
-- Attrition and disclosure are separate. Agencies lost comparable shares of their 2024 use cases but differed sharply in how much they reported as retired. Combined across three agencies, about 92 of 738 use cases from 2024 have no 2025 counterpart and no retirement record. That figure is a ceiling, because text review can miss renames. With the fourth agency added, the combined figure is about 130 of 907, or 14 percent.
+- Attrition and disclosure are separate. Agencies lost comparable shares of their 2024 use cases but differed sharply in how much they reported as retired. Combined across three agencies, about 92 of 738 use cases from 2024 have no 2025 counterpart and no retirement record. That figure is a ceiling, because text review can miss renames. With the fourth agency added, the combined figure is about 130 of 918, or 14 percent.
 - The disappearance cell clears the n-count gate for an aggregate rate. No per agency disappearance figure is published.
 
 ## Complexity
@@ -518,6 +518,7 @@ One analyst runs this study. Every label is one person's judgment. The pilots us
 - Added composition across all agencies and the research and development scope evidence, with the 2024 and 2025 rule text.
 - Scope sample result. Scope component moved to a field rule. Spec version 1.5.
 - NASA and DOE results added.
+- Corrected active growth for two agencies. The first figures removed entries retired in 2025 from the 2024 base. Each year now excludes only its own retired entries, as in the VA figure.
 - DOI results added. Disclosed link rule. Scope pool revised after DOI matching. Combined gone ceiling updated to four agencies.
 - Field rule applied governmentwide. Scope component range added.
 - Added the VA blind test result. Spec amended to version 1.3: full-list search required before a gone label. Noted what the HHS gone labels rest on.

@@ -41,9 +41,9 @@ Completed 2026-11-23. Private. Do not publish the gone figure by agency.
 | Renamed | 18 |
 | Merged | 26 (12 groups, 6 of them 2024 duplicates) |
 | Retired, disclosed in 2025 file | 11 |
-| Gone, no record | 38 (22.5% of 169 active) |
+| Gone, no record | 38 (21.1% of 180) |
 
-- Sensitivity: D24-001 to 003 (in-house chatbot and its service layers) may have been replaced by Copilot Chat in the commercial file (50,000+ users). Not disclosed. If counted as replaced, gone is 35, or 20.7%.
+- Sensitivity: D24-001 to 003 (in-house chatbot and its service layers) may have been replaced by Copilot Chat in the commercial file (50,000+ users). Not disclosed. If counted as replaced, gone is 35, or 19.4%.
 - Seven commercial tools checked against the commercial file on 2026-11-23. None named there.
 - 8 tagged 2025 entries with no OMB 2024 row: D25-066 to 072, D25-194.
 - 2 retired 2025 entries with no 2024 link: D25-154, D25-179.
@@ -62,7 +62,7 @@ Completed 2026-11-23. Private. Do not publish the gone figure by agency.
 | Renamed | 3 |
 | Retired | 10 |
 | Cots | 1 (CrowdStrike, Legacy Management) |
-| Gone, no record | 9 (13.0% of 69 active) |
+| Gone, no record | 9 (11.5% of 78 active) |
 
 - Gone rows: four EHSS DAMaL tools, SLAC accelerator diagnostics, KCNSC AWS data system, SRNL tritium accountancy, Coupa, SRNL additive manufacturing monitoring.
 - Share leaving the active inventory: retired 13%, gone 11% of 79, total 24%.
