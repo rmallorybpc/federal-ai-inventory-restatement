@@ -370,6 +370,29 @@ Findings:
 - Active growth, retired entries excluded in both years, is 38.5 percent. 116 active entries in 2025 have no 2024 link.
 - The commercial product file lists 20 rows for DOI. They are categories of use, not tools. A tool that moved there cannot be matched unless the product is named. The cots label is undercounted at every agency for this reason.
 
+## NASA results
+
+Completed 2026-11-23. Third agency of the full build.
+
+- 2024: 18 entries. 2025: 425, of which 5 are retired.
+- All 18 entries from 2024 continue into 2025. 17 match by exact name. One spells out an abbreviation.
+- All 18 were in production or in mission in 2024. None were in development. The 2024 file reads as a list of operational tools, which fits the 2024 exclusion of research.
+- About 400 active entries in 2025 have no 2024 link. The agency does not cite prior inventory numbers, so no hidden links remain.
+- Matching does not shrink this agency's scope pool. The field rule count of 355 stands, with the judgment range of 256 to 355.
+
+## DOE results
+
+Completed 2026-11-23. Fourth agency of the full build.
+
+- 2024: 79 entries, 1 marked retired. 2025: 340, of which 15 are retired.
+- Labels: 56 continue, 3 renamed, 10 retired, 1 moved to the commercial file. The rest have no counterpart and are counted in the aggregate rate only.
+- Retirement was disclosed in both years. 10 entries from 2024 are marked retired in 2025, one of them in both files. 5 retired entries in 2025 have no 2024 link.
+- Active growth is 371 percent, 69 to 325. 266 active entries in 2025 have no 2024 link.
+- 66 of the 266 meet the research field rule. Most new entries are filed under administrative, IT, and other topics. Research scope explains little of this agency's growth.
+- The 31 entries that say the AI was integrated into a commercial product without an identified benefit sit in one block. They are desktop and office software products with no stated purpose. They read as a software list, not use cases.
+- The matcher paired two entries with unrelated programs at other sites at a score above 0.6. Review caught both.
+- The commercial file named one 2024 tool, a security product. That entry is labeled cots.
+
 ## Composition across all agencies
 
 From OMB's counts, recorded 2026-11-20. No judgment calls.
@@ -494,6 +517,7 @@ One analyst runs this study. Every label is one person's judgment. The pilots us
 - Spec amended to version 1.2: active use case growth added as a headline metric, and the consistency check became a blind test against VA identifiers.
 - Added composition across all agencies and the research and development scope evidence, with the 2024 and 2025 rule text.
 - Scope sample result. Scope component moved to a field rule. Spec version 1.5.
+- NASA and DOE results added.
 - DOI results added. Disclosed link rule. Scope pool revised after DOI matching. Combined gone ceiling updated to four agencies.
 - Field rule applied governmentwide. Scope component range added.
 - Added the VA blind test result. Spec amended to version 1.3: full-list search required before a gone label. Noted what the HHS gone labels rest on.

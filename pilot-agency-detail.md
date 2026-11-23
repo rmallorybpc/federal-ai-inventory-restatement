@@ -50,6 +50,25 @@ Completed 2026-11-23. Private. Do not publish the gone figure by agency.
 - Share leaving the active inventory: retired 6%, gone 21% of 180, total 27%.
 - Tool level labels: results/doi/review-doi.csv.
 
+## NASA detail
+
+- 18 of 18 continue. No retired, no gone.
+
+## DOE detail
+
+| Label | Count |
+|---|---|
+| Continues | 56 |
+| Renamed | 3 |
+| Retired | 10 |
+| Cots | 1 (CrowdStrike, Legacy Management) |
+| Gone, no record | 9 (13.0% of 69 active) |
+
+- Gone rows: four EHSS DAMaL tools, SLAC accelerator diagnostics, KCNSC AWS data system, SRNL tritium accountancy, Coupa, SRNL additive manufacturing monitoring.
+- Share leaving the active inventory: retired 13%, gone 11% of 79, total 24%.
+- Software list block: E25-050 to E25-080.
+- Tool level labels: results/doe/review-doe.csv.
+
 ## Composition detail
 
 - In 2024 only: CFPB 4, EEOC 8, OPM 2, PRC 1, PT 5, USAGM 8, USAID 137, USCCR 2, USTDA 4. Total 171.
