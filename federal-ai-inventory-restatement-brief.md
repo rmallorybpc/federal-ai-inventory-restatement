@@ -410,9 +410,10 @@ Completed 2026-11-23. Sixth agency of the full build.
 
 - 2024: 183 entries, 39 marked retired. 2025: 238, of which 33 are retired.
 - Published growth is 30.1 percent. Active growth, with each year's retired entries excluded, is 42.4 percent, 144 to 205. Here the retired entries pull published growth down, not up, because the 2024 file held more of them.
-- Labels: 93 continue, 16 renamed, 68 retired. Two rows are unresolved. The rest have no counterpart and are counted in the aggregate rate only.
-- 29 active entries from 2024 are marked retired in 2025. With the 39 retired in 2024, this agency disclosed retirement more fully than any agency so far.
-- Three 2024 entries for commercial generative AI (text, image, code) are marked retired in 2025. They may have moved to the commercial file rather than stopped.
+- Labels: 93 continue, 18 renamed, 65 retired, 4 moved to the commercial file. The rest have no counterpart and are counted in the aggregate rate only.
+- 29 active entries from 2024 are marked retired in 2025. Three of them moved to the commercial file. With the 39 retired in 2024, this agency disclosed retirement more fully than any agency so far.
+- Three 2024 entries for commercial generative AI (text, image, code) are marked retired in 2025. The commercial file lists the same uses: chat tools under report summarizing, image tools under image editing, code assistants under code generation. They are labeled cots. The retired stage reflects the 2025 reporting rule, not a stopped use.
+- A retired stage in 2025 can hide a move to the commercial file. Retired entries at other agencies need the same check before the retired share is final.
 - 96 active entries in 2025 have no 2024 link. None meet the research field rule.
 - The matcher paired a climate assessment tool with an unrelated data assistant at a score above 0.6. Review caught it.
 
@@ -545,7 +546,7 @@ One analyst runs this study. Every label is one person's judgment. The pilots us
 - Spec amended to version 1.2: active use case growth added as a headline metric, and the consistency check became a blind test against VA identifiers.
 - Added composition across all agencies and the research and development scope evidence, with the 2024 and 2025 rule text.
 - Scope sample result. Scope component moved to a field rule. Spec version 1.5.
-- DHS results added.
+- DHS results added. Commercial file check moved four DHS entries to cots, three of them marked retired in 2025.
 - USDA results added.
 - NASA: one linked entry is retired in the 2025 file. Label corrected.
 - Scope component recounted from reviewed matches. Range set from the judgment labels.
