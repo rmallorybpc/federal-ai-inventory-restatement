@@ -404,6 +404,18 @@ Completed 2026-11-23. Fifth agency of the full build.
 - Active growth, with each year's retired entries excluded, is 74.4 percent, 82 to 143.
 - 35 of the 82 active entries in 2025 with no 2024 link meet the research field rule.
 
+## DHS results
+
+Completed 2026-11-23. Sixth agency of the full build.
+
+- 2024: 183 entries, 39 marked retired. 2025: 238, of which 33 are retired.
+- Published growth is 30.1 percent. Active growth, with each year's retired entries excluded, is 42.4 percent, 144 to 205. Here the retired entries pull published growth down, not up, because the 2024 file held more of them.
+- Labels: 93 continue, 16 renamed, 68 retired. Two rows are unresolved. The rest have no counterpart and are counted in the aggregate rate only.
+- 29 active entries from 2024 are marked retired in 2025. With the 39 retired in 2024, this agency disclosed retirement more fully than any agency so far.
+- Three 2024 entries for commercial generative AI (text, image, code) are marked retired in 2025. They may have moved to the commercial file rather than stopped.
+- 96 active entries in 2025 have no 2024 link. None meet the research field rule.
+- The matcher paired a climate assessment tool with an unrelated data assistant at a score above 0.6. Review caught it.
+
 ## Composition across all agencies
 
 From OMB's counts, recorded 2026-11-20. No judgment calls.
@@ -533,6 +545,7 @@ One analyst runs this study. Every label is one person's judgment. The pilots us
 - Spec amended to version 1.2: active use case growth added as a headline metric, and the consistency check became a blind test against VA identifiers.
 - Added composition across all agencies and the research and development scope evidence, with the 2024 and 2025 rule text.
 - Scope sample result. Scope component moved to a field rule. Spec version 1.5.
+- DHS results added.
 - USDA results added.
 - NASA: one linked entry is retired in the 2025 file. Label corrected.
 - Scope component recounted from reviewed matches. Range set from the judgment labels.
